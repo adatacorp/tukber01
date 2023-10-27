@@ -2,7 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Homepage from '/components/Homepage'
+import Homepage from './components/Homepage';
+import InputLocation from './components/InputLocation';
+import HomepageCards from './components/HomepageCards';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +21,9 @@ export default function App() {
          ),
          }} 
          />
+         <Stack.Screen name="InputLocation" component={InputLocation}/>
+         <Stack.Screen name="HomepageCards" component={HomepageCards}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -28,6 +33,7 @@ function HomeScreen({ navigation }) {
   const handleHomeScreen = () => {
     navigation.navigate('Homepage');
   }
+ 
   return (
     <View style={styles.container}>
       <Text>Welcome to Tukber</Text>
@@ -61,4 +67,8 @@ const styles = StyleSheet.create({
    flexDirection: 'row',
    width: '100%',
   },
+  profileImg: {
+    width: '10%',
+    height: '10%'
+  }
 });

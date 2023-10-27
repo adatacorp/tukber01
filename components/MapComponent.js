@@ -4,7 +4,7 @@ import MapView from 'react-native-maps';
 function MapComponent(){
     return(
         <View style={{ flex: 1 }}>
-            <MapView style={{ flex: 1}}
+            <MapView style={{ flex: 1, width: '100%'}}
              initialRegion={{
                 latitude: 37.00,
                 longitude: -122.25,
