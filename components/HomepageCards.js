@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { 
     View, Text, TouchableOpacity, StyleSheet, Image, TextInput
- } from 'react-native';
+} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { withNavigation } from 'react-navigation';
+import { useNavigation } from '@react-navigation/native';
 
 function Card({ title, onPress, imageSource }) {
   return (
@@ -17,12 +17,9 @@ function Card({ title, onPress, imageSource }) {
   );
 }
 
-function HomepageCards({ navigation }) {
+function HomepageCards() {
 const [ location, setLocation ] = useState('');
-const handleSubmission = () => {
-  navigation.navigate('InputLocation');
-  console.log('Location Submitted: ', location );
-}
+const navigation = useNavigation();
   return (
     <View style={styles.cardBox}>
       <View>
@@ -32,14 +29,14 @@ const handleSubmission = () => {
        value={location}
        onChangeText={(text) => setLocation(text)}
       />
-      <TouchableOpacity onPress={handleSubmission}>
+      <TouchableOpacity onPress={() => navigation.navigate('InputLocation')}>
       <MaterialIcons name="send" />
       </TouchableOpacity>
       </View>
       <View style={styles.cardContainer}>
-      <Card title="Driver" onPress={handleSubmission} />
-      <Card title="Rider" onPress={handleSubmission} />
-      <Card title="Courier" onPress={handleSubmission} />
+      <Card title="Driver" onPress={() => navigation.navigate('InputLocation')} />
+      <Card title="Rider" onPress={() => navigation.navigate('InputLocation')} />
+      <Card title="Courier" onPress={() => navigation.navigate('InputLocation')} />
       </View>
     </View>
   );
@@ -71,4 +68,4 @@ const styles = StyleSheet.create({
         backgroundColor: 'white', 
     },
 })
-export default withNavigation(HomepageCards);
+export default HomepageCards;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput } from 'react-native';
+import { View, TextInput, StyleSheet, Button } from 'react-native';
 
 export default function InputLocation() {
   const [ myLocation, setMyLocation] = useState('');
@@ -14,5 +14,12 @@ export default function InputLocation() {
       value={myLocation}
       onChangeText={(text) => setMyLocation(text)} />
     </View>
+    
   );
 }
+
+const styles = StyleSheet.create({
+  inputField: {
+   display: "flex",
+  } 
+})
