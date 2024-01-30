@@ -34,7 +34,7 @@ const navigation = useNavigation();
       </TouchableOpacity>
       </View>
       <View style={styles.cardContainer}>
-      <Card title="Driver" onPress={() => navigation.navigate('InputLocation')} />
+      <Card title="Driver" image onPress={() => navigation.navigate('InputLocation')} />
       <Card title="Rider" onPress={() => navigation.navigate('InputLocation')} />
       <Card title="Courier" onPress={() => navigation.navigate('InputLocation')} />
       </View>
