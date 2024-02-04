@@ -143,6 +143,6 @@ I would like to thank Uber for the inspiration of the project.
 
 ## 📝 License <a name="license"></a>
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE).  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
